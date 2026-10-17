@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Headline Generator</title>
+    <link rel="stylesheet" type="text/css"  href="style.css">
+    <style>
+        body { 
+    font-family: Arial, sans-serif; 
+    text-align: center; 
+    padding: 20px; 
+    background-color: #000;
+    color: #333;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+justify-content:center;
+}
+
+textarea { 
+    width: 100%; 
+    height: 120px; 
+    padding: 10px; 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+    font-size: 16px;
+}
+
+button { 
+    padding: 12px 25px; 
+    margin-top: 15px; 
+    cursor: pointer; 
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff; 
+    color: white; 
+    font-size: 16px;
+    transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.result { 
+    margin-top: 20px; 
+    font-weight: bold; 
+    font-size: 18px;
+    color: #28a745;
+}
+
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+    <h1>News Headline Generator</h1>
+    <form method="post">
+        <textarea name="article" placeholder="Enter the article text here..." required></textarea><br>
+        <button type="submit">Generate Headline</button>
+    </form>
+    {% if headline %}
+    <div class="result">
+        <h3>Generated Headline:</h3>
+        <p>{{ headline }}</p>
+    </div>
+    {% endif %}
+    </div>
+</body>
+</html>
